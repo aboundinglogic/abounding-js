@@ -1,0 +1,30 @@
+{
+  "name": "abounding-js",
+  "homepage": "https://github.com/aboundinglogic/abounding-js",
+  "authors": [
+    "Shawn Welch <shrimpwagon@gmail.com>"
+  ],
+  "description": "Helpful js prototypes, functions and jquery extensions",
+  "main": "dist/abounding.js",
+  "moduleType": [],
+  "keywords": [
+    "jquery",
+    "framework"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "blockUI": "blockui#*",
+    "jquery-validation": "^1.15.0",
+    "jquery-form": "^3.46.0",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.5.0"
+  }
+}
