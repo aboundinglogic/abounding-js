@@ -47,6 +47,25 @@ XMLHttpRequest.prototype.mySendAsBinary = function(text)
 $(document).ready(function() {
 
 	// Element blocking
+	$.datepickerOptions = {
+		todayBtn: 'linked',
+		forceParse: false,
+		todayHighlight: true,
+		format: {
+			toDisplay: function(date)
+			{
+				return (date.getUTCMonth() + 1) + '/' + date.getUTCDate() + '/' + date.getUTCFullYear();
+			},
+			toValue: function(date, format, language)
+			{
+				return date;
+			}
+		}
+	}
+
+	$('.datepicker').datepicker($.datepickerOptions);
+
+	// Element blocking
 	$.blockOptions = {
         message: '<i id="blockui-spinner" class="fa fa-gear"></i>',
         fadeIn: 0,
@@ -250,7 +269,7 @@ $(document).ready(function() {
                         error = errorList[index];
                         $elem = $(error.element);
                         $elem.closest('.form-group').addClass('has-error');
-                        $elem.tooltip({
+                        $elem.not(':input[type="radio"]').tooltip({
                             'title': error.message,
                             'trigger': 'hover'
                         });
@@ -312,4 +331,23 @@ function randomId(length)
 		text += possible.charAt(Math.floor(Math.random() * possible.length));
 
 	return text;
+}
+
+function getURIParameters()
+{
+	var queries = {};
+
+	var search = window.location.search;
+
+	if(search)
+	{
+	  search.substr(1).split('&').forEach(function(param)
+	  {
+	    var i = param.split('=');
+
+	    queries[i[0]] = decodeURIComponent(i[1]);
+	  });
+	}
+
+	return queries;
 }
