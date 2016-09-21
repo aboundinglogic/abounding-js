@@ -51,6 +51,7 @@ $(document).ready(function() {
 		todayBtn: 'linked',
 		forceParse: false,
 		todayHighlight: true,
+		autoclose: true,
 		format: {
 			toDisplay: function(date)
 			{
@@ -76,7 +77,7 @@ $(document).ready(function() {
             border: 'none'
         },
 		overlayCSS: {
-			backgroundColor: '#000'
+			backgroundColor: '#FFF'
 		}
     }
 
